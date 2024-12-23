@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import seedRouter from "./routes/seedRoutes.js";
 import productRouter from "./routes/productRoutes.js";
 import userRouter from "./routes/userRoutes.js";
@@ -20,6 +21,11 @@ mongoose
   });
 
 const app = express();
+
+app.use(cors({
+  origin: 'https://amazona-frontend-7k6k.onrender.com',
+  // origin: 'http://localhost:3000',
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
