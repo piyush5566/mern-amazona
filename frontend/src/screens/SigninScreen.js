@@ -9,6 +9,8 @@ import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 export default function SigninScreen() {
   const navigate = useNavigate();
   const { search } = useLocation();
@@ -23,7 +25,7 @@ export default function SigninScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('/api/users/signin', {
+      const { data } = await Axios.post(`${API_URL}/api/users/signin`, {
         email,
         password,
       });

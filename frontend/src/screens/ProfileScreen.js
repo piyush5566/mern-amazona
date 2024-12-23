@@ -7,6 +7,8 @@ import { toast } from 'react-toastify';
 import { getError } from '../utils';
 import axios from 'axios';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_REQUEST':
@@ -37,7 +39,7 @@ export default function ProfileScreen() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        '/api/users/profile',
+        `${API_URL}/api/users/profile`,
         {
           name,
           email,

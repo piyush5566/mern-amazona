@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { Store } from '../Store';
 import { getError } from '../utils';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 export default function ResetPasswordScreen() {
   const navigate = useNavigate();
   const { token } = useParams();
@@ -32,7 +34,7 @@ export default function ResetPasswordScreen() {
       return;
     }
     try {
-      await Axios.post('/api/users/reset-password', {
+      await Axios.post(`${API_URL}/api/users/reset-password`, {
         password,
         token,
       });

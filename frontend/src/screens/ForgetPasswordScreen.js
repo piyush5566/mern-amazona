@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { Store } from '../Store';
 import { getError } from '../utils';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 export default function ForgetPasswordScreen() {
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export default function ForgetPasswordScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('/api/users/forget-password', {
+      const { data } = await Axios.post(`${API_URL}/api/users/forget-password`, {
         email,
       });
       toast.success(data.message);
