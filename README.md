@@ -14,7 +14,7 @@
 
 ## Demo Website
 
-- 👉 Render : [https://amazona.onrender.com](https://amazona.onrender.com)
+- 👉 Render : [https://amazona-frontend-7k6k.onrender.com](https://amazona-frontend-7k6k.onrender.com/)
 
 ## Project Description
 
